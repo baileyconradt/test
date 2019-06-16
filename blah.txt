@@ -1,3 +1,1 @@
 This is necessary for the new feature.
-
-Another change.
