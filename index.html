@@ -1,1 +1,250 @@
 <h1>This is a header!</h1>
+<div id="tree-container"> 
+<div id="q-container"> 
+
+<ul id="tree"> 
+  <li>Do you want to listen to a love song?</li>
+
+<!-- YES -->
+
+  <li><input name="lvl1" type="radio">Yes
+    <ul>
+      <li>Which Taylor do you want to listen to?</li>
+      
+      <!-- Old Taylor -->
+      
+      <li><input name="lvl2" type="radio">Old Taylor
+        <ul>
+          <li>What song speed do you prefer?</li>
+          
+          <!-- Fast -->
+
+             <li><input name="lvl3" type="radio">Fast
+               <ul>
+                 <li>Which album would you like?</li>
+
+               <li><input name="lvl4" type="radio">Speak Now
+                    <ul>
+                      <li class="answer">Sparks Fly
+                      <li class="answer">Mean
+                      <li class="answer">The Story of Us
+                      <li class="answer">Better Than Revenge
+                      <li class="answer">Superman
+                   </ul>
+
+               <li><input name="lvl4" type="radio">Fearless
+
+               <li><input name="lvl4" type="radio">Taylor Swift
+
+</ul>
+
+                      
+          <!-- Moderate -->
+
+             <li><input name="lvl3" type="radio">Moderate
+               <ul>
+                 <li>Which album would you like?</li>
+
+
+               <li><input name="lvl4" type="radio">Speak Now
+
+               <li><input name="lvl4" type="radio">Fearless
+
+               <li><input name="lvl4" type="radio">Taylor Swift
+
+               <li><input name="lvl4" type="radio">Other
+
+</ul>
+
+<!-- Slow -->
+
+             <li><input name="lvl3" type="radio">Slow
+               <ul>
+                 <li>Which album would you like?</li>
+
+               <li><input name="lvl4" type="radio">Speak Now
+
+               <li><input name="lvl4" type="radio">Fearless
+
+               <li><input name="lvl4" type="radio">Taylor Swift
+</ul>
+
+</ul>
+
+<!-- New Taylor -->
+      
+      <li><input name="lvl2" type="radio">New Taylor
+        <ul>
+          <li>What song speed do you prefer?</li>
+          
+          <!-- Fast -->
+
+             <li><input name="lvl3" type="radio">Fast
+             <ul>
+                 <li>Which album would you like?</li>
+
+               <li><input name="lvl4" type="radio">Lover
+
+               <li><input name="lvl4" type="radio">Reputation
+
+               <li><input name="lvl4" type="radio">1989
+
+               <li><input name="lvl4" type="radio">Red
+
+</ul>
+          <!-- Moderate -->
+
+             <li><input name="lvl3" type="radio">Moderate
+               <ul>
+                 <li>Which album would you like?</li>
+
+
+               <li><input name="lvl4" type="radio">Reputation
+
+               <li><input name="lvl4" type="radio">1989
+
+               <li><input name="lvl4" type="radio">Red
+</ul>
+
+<!-- Slow -->
+
+             <li><input name="lvl3" type="radio">Slow
+               <ul>
+                 <li>Which album would you like?</li>
+
+               <li><input name="lvl4" type="radio">Reputation
+
+               <li><input name="lvl4" type="radio">1989
+
+               <li><input name="lvl4" type="radio">Red
+
+               <li><input name="lvl4" type="radio">Other
+
+</ul>
+
+
+
+</ul>
+</ul>
+<!-- NO -->
+
+  <li><input name="lvl1" type="radio">No
+    <ul>
+      <li class="answer">Wrong Answer!
+
+</ul>
+
+</div> 
+
+<button id="goBack" class="treeControls"> 
+Back 
+</button> 
+
+<button id="reset" class="treeControls"> 
+Reset 
+</button> 
+
+<!--<button id="showAll" class="treeControls"> 
+Show All 
+</button> --> 
+
+</div>
+  
+  <style> 
+
+.album {
+width: 40px;
+height: 40px;
+margin-left: 20px;
+
+}
+
+
+/*ul#tree img {border:1px solid black; margin:10px;}*/
+
+div#tree-container {background: #efefef; margin: 10px; padding: 15px; border: 1px solid #ccc;} 
+
+ul#tree, #tree ul {list-style-type:none;} 
+ul#tree {background: #fff; margin:0; padding: 0;} 
+#tree li {padding-top:20px;} 
+ul#tree li:last-child {padding-bottom:20px} 
+#tree input {margin-right:8px; margin-left: 20px;} 
+
+.choices-collapsed {display:none;} 
+
+ul#tree li.choice-selected {font-style:italic; background: #fff; padding-bottom:0px;} 
+#tree li:first-child {padding-left: 15px; font-weight:bold;} 
+
+.choice-selected ul { 
+  background: #efefef;  
+  font-style:normal; 
+  margin-top:20px; 
+  padding-top:10px; 
+} 
+
+.choice-selected ul li {background: #fff; margin-left:-40px;} 
+
+#tree li.answer {border: 2px solid black; padding:20px; background:#fff; font-weight:normal;} 
+
+.treeControls {margin-top: 20px;} 
+
+a.seeinfo {background: url('/images/group1/shared/SupportIcons/question-mark.png') center center/15px 15px no-repeat;}
+a.seeinfo {
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    height: 15px;
+    padding-left: 20px;
+}
+div.moreinfo {display:none;}
+a.seeinfo:hover + div.moreinfo {
+display: inline-block;
+position: absolute;
+width: 300px;
+font-size: .9em;
+font-weight: normal;
+background-color: #efefef;
+padding: 20px;
+z-index: 100;
+box-shadow: 5px 5px 8px #555;
+border-radius: 10px;
+border: 1px solid #bbb;
+}
+
+
+</style><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script> 
+$(document).ready(function(){ 
+
+    $("ul#tree li ul").addClass("choices-collapsed"); // Hides subquestions at start 
+
+    $("#tree li input").click(function(event) { //Reveals subquestions for selected choice, hides choices not selected
+      $(event.target).parent().addClass("choice-selected"); 
+      $(event.target).nextAll().removeClass("choices-collapsed"); 
+      $(event.target).parent().nextAll().addClass("choices-collapsed"); 
+      $(event.target).parent().prevAll().addClass("choices-collapsed"); 
+    }); 
+   
+   
+    $("#goBack").click(function(event) { //Undoes last selection 
+       $('li.choice-selected:last').children("ul").addClass("choices-collapsed"); 
+       $('li.choice-selected:last').nextAll().removeClass("choices-collapsed"); 
+       $('li.choice-selected:last').prevAll().removeClass("choices-collapsed"); 
+       $('li.choice-selected:last').removeClass("choice-selected"); 
+    }); 
+
+    $("#reset").click(function(event) { //Resets to initial state 
+      $('*').removeClass("choices-collapsed"); 
+       $('*').removeClass("choice-selected"); 
+       $("ul#tree li ul").addClass("choices-collapsed"); 
+    }); 
+
+    // Not currently using showAll function 
+        //$("#showAll").click(function(event) { 
+        //    $('*').removeClass("choices-collapsed"); 
+        //    $('*').removeClass("choice-selected"); 
+        //}); 
+
+}); 
+</script>
+ 
